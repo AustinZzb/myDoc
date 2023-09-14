@@ -7,27 +7,15 @@
 <html>
 
 <head>
-    <title>Austin-Home</title>
-	<script src="./assets/js/jquery-3.7.0.js"></script>
+    <title>Paper</title>
+	<script src="myAssets/js/readDocuments.js"></script>
+	<script src="myAssets/js/showDocuments.js"></script>
 </head>
 	
 
-	<body class="is-preload">
-		<script type="text/javascript">
+	<body>
+	
 
-			document.getElementById('input').addEventListener('change', (e) => {
-				// const file = e.target.files[0];
-
-				const reader = new FileReader(); // 创建FileReader对象(文件对象)
-				console.log(reader);
-				reader.readAsDataURL("./Documents");
-				reader.onload = (e) => { // 读取成功时：
-					console.log("图片路径："+e.target.result);
-				};
-			})
-
-
-		</script>
 	</body>
 
 </html>
