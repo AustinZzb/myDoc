@@ -1,3 +1,9 @@
-#documents a:visited {
-    color: inherit;
+
+
+#Documents {
+    line-height: 50px;
+}
+#Documents ul{
+    list-style-type: none;
+    line-height: 50px;
 }
