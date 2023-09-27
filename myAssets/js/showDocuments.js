@@ -59,8 +59,7 @@ function clickFolder() {
     });
 }
 
-window.onload = function () {
-    createDocuments();
 
-    clickFolder()
-};
+createDocuments();
+
+clickFolder();

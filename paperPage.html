@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML >
 <!--
 	Aerial by HTML5 UP
 	html5up.net | @ajlkn
@@ -7,19 +7,33 @@
 <html>
 
 <head>
-    <title>Paper</title>
-	
+	<title>Paper</title>
+
 	<link rel="stylesheet" href="myAssets/css/Documents.css">
+	<link rel="stylesheet" href="myAssets/css/mouse.css">
 </head>
-	
 
-	<body>
+
+<body ondragstart="window.event.returnValue=false" oncontextmenu="window.event.returnValue=false"
+	onselectstart="event.returnValue=false">
+
+	<div id="container">
+		<div>
+			<!-- 鼠标 -->
+			<h1 id="h1"></h1>
+			<h2 id="h2"></h2>
+		</div>	
+
 		<div class="documentsDIV"></div>
+	</div>
 
-		<script src="myAssets/js/readDocuments.js">
-			
-		</script>
-		<script defer="true" src="myAssets/js/showDocuments.js"></script>
-	</body>
+	<!-- 鼠标 -->
+	<canvas id="canvas"></canvas>
+
+	<script src="myAssets/js/readDocuments.js"></script>
+	<script src="myAssets/js/showDocuments.js"></script>
+	<script src="myAssets/js/mouse.js"></script>
+	
+</body>
 
 </html>
