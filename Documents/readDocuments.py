@@ -33,9 +33,6 @@ def writeObjectToJs(name, path, folderArr, fileArr):
 
     write(objectString)
 
-# 在js文件中声明Folder类
-write(FolderClass)
-
 # 获取该目录下所有文件，如果为目录则创建Folder对象
 # 此处应该使用递归的方式，因为大文件夹包含小文件夹，所以小文件夹应该声明在前
 def getFilename(path):
@@ -63,6 +60,11 @@ def getFilename_Document(path):
     # 创建对象并写入js文件
     writeObjectToJs(str(path), path+"/", folder_temp, file_tamp)
 
+
+with open('./myAssets/js/'+'readDocuments.js', 'w') as f:
+    f.truncate(0)
+# 在js文件中声明Folder类
+write(FolderClass)
 getFilename_Document(path)
 
 # def getFileName(path):
