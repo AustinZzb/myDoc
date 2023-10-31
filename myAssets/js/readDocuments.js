@@ -15,9 +15,9 @@ var reading = new Folder ('reading', 'Documents/Papers/reading/', [], ['0.196mm 
 
 var 综述 = new Folder ('综述', 'Documents/Papers/综述/', [], ['基于多信息深度学习的3D点云语义分割_刘友群.pdf', '基于深度学习的3D点云补全算法综述_魏青.pdf', '基于深度学习的3维点云处理综述_李娇娇.pdf', '点云综述_英文.pdf'])
 
-var reading = new Folder ('reading', 'Documents/Papers/英文文献/reading/', [], [])
+var en_reading = new Folder ('en_reading', 'Documents/Papers/英文文献/en_reading/', [], [])
 
-var 英文文献 = new Folder ('英文文献', 'Documents/Papers/英文文献/', [reading], ['1612.00593.pdf', 'A_Path_Planning_Algorithm_of_Spray_Robot_based_on_3D_Point_Cloud.pdf', 'Fast_Object_Segmentation_Pipeline_for_Point_Clouds_Using_Robot_Operating_System.pdf', 'PointNet++_Deep_Hierarchical_Feature_Learning_on.pdf', 'PointNet_Deep_Learning_on_Point_Sets_for_3D_Classification_and_Segmentation.pdf', 'PointNet_supplementary.pdf', 'Recognition_and_Pose_Estimation_of_Auto_Parts_for_an_Autonomous_Spray_Painting_Robot.pdf', 'TSAI_A_versatile_camera_calibration_technique_for_high-accuracy_3D_machine_vision_metrology_using_off-the-shelf_TV_cameras_and_lenses.pdf'])
+var 英文文献 = new Folder ('英文文献', 'Documents/Papers/英文文献/', [en_reading], ['1612.00593.pdf', 'A_Path_Planning_Algorithm_of_Spray_Robot_based_on_3D_Point_Cloud.pdf', 'Fast_Object_Segmentation_Pipeline_for_Point_Clouds_Using_Robot_Operating_System.pdf', 'PointNet++_Deep_Hierarchical_Feature_Learning_on.pdf', 'PointNet_Deep_Learning_on_Point_Sets_for_3D_Classification_and_Segmentation.pdf', 'PointNet_supplementary.pdf', 'Recognition_and_Pose_Estimation_of_Auto_Parts_for_an_Autonomous_Spray_Painting_Robot.pdf', 'TSAI_A_versatile_camera_calibration_technique_for_high-accuracy_3D_machine_vision_metrology_using_off-the-shelf_TV_cameras_and_lenses.pdf'])
 
 var 高频参考文献 = new Folder ('高频参考文献', 'Documents/Papers/高频参考文献/', [], ['paperName.docx', '中国计算机学会推荐国际学术会议和期刊目录- 2022.pdf', '期刊_文献.docx'])
 
@@ -25,5 +25,5 @@ var Papers = new Folder ('Papers', 'Documents/Papers/', [over, reading, 综述, 
 
 var tempDocuments = new Folder ('tempDocuments', 'Documents/tempDocuments/', [], ['向量叉乘.txt'])
 
-var Documents = new Folder ('Documents', 'Documents/', [Books, Papers, tempDocuments], ['LMI和海康相机对比.docx', 'readDocuments.py', '~$阅读-实验方法.docx', '~WRL0005.tmp', '文献阅读-实验方法.docx', '方法尝试-附带思考过程.docx', '每日安排总结.docx'])
+var Documents = new Folder ('Documents', 'Documents/', [Books, Papers, tempDocuments], ['LMI和海康相机对比.docx', 'readDocuments.py', '文献阅读-实验方法.docx', '方法尝试-附带思考过程.docx', '每日安排总结.docx'])
 
