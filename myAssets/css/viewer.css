@@ -1,0 +1,127 @@
+div#download-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div#download-button a {
+    color: #fff;
+    /* 使用主要颜色 */
+    text-decoration: none;
+    /* 去掉下划线 */
+    font-weight: bold; /* 设置字体加粗 */
+    font-size: 20px;
+    text-align: center;
+}
+
+div#download-button a:hover {
+    color: #666; /* 设置鼠标悬停时的链接颜色 */
+}
+
+/*
+
+这将使id为download-button的div中的链接使用主要颜色，而正文中的链接使用次要颜色。
+
+要使表格具有更好的层次结构，您可以使用thead、tbody和tfoot元素来将表格分成不同的部分，并使用不同的样式来区分它们。例如，您可以使用以下代码来定义表格的样式：
+
+*/
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+thead {
+    background-color: #f2f2f2;
+}
+
+td, th {
+    border: 2px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+tfoot {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/*
+
+这将使表格具有灰色的头部和脚部，以及灰色的水平分隔线。
+
+要使标题和正文具有更好的层次结构，您可以使用不同的字体、颜色和大小来区分它们。例如，您可以使用以下代码来定义标题和正文的样式：
+
+*/
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 18px;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 14px;
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+h6 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+div#content p {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+/*
+
+这将使标题具有Arial字体、粗体、36像素大小和主要颜色，而正文具有Georgia字体、18像素大小、适当的行高和次要颜色。
+
+最后，要区分两个div和a标签，您可以使用id和class属性来为它们命名，并在CSS中使用选择器来区分它们。例如，您可以使用以下代码来定义两个div和它们包含的链接的样式：
+
+*/
+div#download-button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+div#content a {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+/*
+
+这将使id为download-button的div具有黑色背景、白色文本和圆角边框，而正文中的链接具有下划线和次要颜色。
+*/

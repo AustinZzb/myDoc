@@ -2,16 +2,24 @@
  * @Author: Austin 1158680540@qq.com
  * @Date: 2023-10-31 16:49:04
  * @LastEditors: Austin 1158680540@qq.com
- * @LastEditTime: 2023-10-31 17:20:47
+ * @LastEditTime: 2023-11-01 09:32:49
  * @FilePath: \Justin-zzb.github.io\viewer.html
- * @Description: 每个li(word文档)都会根据链接跳转到这个页面，word进行转换并展示
+ * @Description: word网页预览器
+ 每个li(word文档)都会根据链接跳转到这个页面，word进行转换并展示
+ 跳转链接  eg：http://127.0.0.1:5500/viewer.html?document=path/name.docx
 -->
 <!DOCTYPE html>
 <html>
 <head>
   <title>文档查看器</title>
+
+  <link rel="stylesheet" href="myAssets/css/viewer.css">
 </head>
 <body>
+
+  <div id="download-button">
+    <a>Download</a>
+  </div>
   <div id="document-content"></div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
@@ -24,6 +32,7 @@
 
     // 设置页面标题为文档名字
     document.title = documentName;
+    document.querySelector("#download-button a").setAttribute("href", documentURL)
 
     if (documentURL) {
       // 使用 Mammoth.js 进行转换并显示内容
