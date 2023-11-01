@@ -1,18 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <script src="myAssets/js/readDocuments.js"></script>
-    <script src="myAssets/js/showDocuments.js"></script>
-    <link rel="stylesheet" href="myAssets/css/readDocuments.css">
-    <style>
-        #documents a {
-            background-color: aqua;
-        }
-    </style>
+  <title>首页</title>
 </head>
 <body>
-        
+  <!-- <a href="view.html?file=Documents/LMI和海康相机对比.docx" target="_blank">点击查看 Word 文件</a> -->
+  <input type="file" onchange="parseWordDocxFile(this)">
+  <script>src="https://cdn.bootcss.com/mammoth/1.4.8/mammoth.browser.js"></script>
+    <script>
+         
+  function parseWordDocxFile(inputElement) {
+    var files = inputElement.files || [];
+    if (!files.length) return;
+    var file = files[0];
+
+    console.time();
+    var reader = new FileReader();
+    reader.onloadend = function(event) {
+      var arrayBuffer = reader.result;
+      // debugger
+
+      mammoth.convertToHtml({arrayBuffer: arrayBuffer}).then(function (resultObject) {
+        result1.innerHTML = resultObject.value
+        console.log(resultObject.value)
+      })
+      console.timeEnd();
+
+      mammoth.extractRawText({arrayBuffer: arrayBuffer}).then(function (resultObject) {
+        result2.innerHTML = resultObject.value
+        console.log(resultObject.value)
+      })
+
+      mammoth.convertToMarkdown({arrayBuffer: arrayBuffer}).then(function (resultObject) {
+        result3.innerHTML = resultObject.value
+        console.log(resultObject.value)
+      })
+    };
+    reader.readAsArrayBuffer(file);
+  }
+    </script>
 </body>
+
 </html>

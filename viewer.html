@@ -1,0 +1,68 @@
+<!--
+ * @Author: Austin 1158680540@qq.com
+ * @Date: 2023-10-31 16:49:04
+ * @LastEditors: Austin 1158680540@qq.com
+ * @LastEditTime: 2023-11-01 09:32:49
+ * @FilePath: \Justin-zzb.github.io\viewer.html
+ * @Description: word网页预览器
+ 每个li(word文档)都会根据链接跳转到这个页面，word进行转换并展示
+ 跳转链接  eg：http://127.0.0.1:5500/viewer.html?document=path/name.docx
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>文档查看器</title>
+
+  <link rel="stylesheet" href="myAssets/css/viewer.css">
+</head>
+<body>
+
+  <div id="download-button">
+    <a>Download</a>
+  </div>
+  <div id="document-content"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+  <script>
+    // 获取 URL 中的文档信息
+    var urlParams = new URLSearchParams(window.location.search);
+    var documentURL = urlParams.get("document");
+
+    var documentName = documentURL ? getDocumentName(documentURL) : "未指定文档";
+
+    // 设置页面标题为文档名字
+    document.title = documentName;
+    document.querySelector("#download-button a").setAttribute("href", documentURL)
+
+    if (documentURL) {
+      // 使用 Mammoth.js 进行转换并显示内容
+      var documentContentElement = document.getElementById("document-content");
+
+      fetch(documentURL)
+        .then(response => response.arrayBuffer())
+        .then(arrayBuffer => {
+          mammoth.convertToHtml({ arrayBuffer: arrayBuffer })
+            .then(function(result) {
+              documentContentElement.innerHTML = result.value;
+            })
+            .catch(function(error) {
+              documentContentElement.innerHTML = "无法转换 Word 文件：" + error;
+            });
+        })
+        .catch(function(error) {
+          documentContentElement.innerHTML = "无法加载文档：" + error;
+        });
+    } else {
+      // 没有提供文档信息
+      document.getElementById("document-content").innerHTML = "未指定要查看的文档。";
+    }
+
+    // 获取文档名字（示例函数，您可以根据实际情况修改）
+    function getDocumentName(documentURL) {
+      // 从文档 URL 中提取文档名字，例如 "path/to/document.docx" 中的 "document.docx"
+      var parts = documentURL.split("/");
+      return parts[parts.length - 1];
+    }
+  </script>
+</body>
+</html>
